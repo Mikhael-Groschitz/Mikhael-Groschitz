@@ -1,12 +1,12 @@
 <div align="center">
   
-# Olá mundo, seja bem vindo ao meu perfil do GitHub 👋
+# Hello World, Welcome to my GitHub Profile 👋
 
-<p> 👨‍💻 Hoje eu trabalho como Analista de Suporte Técnico </p>
-<p> 🌱 Estudando Python, Django, Azure, SQL e derivados </p>
-<p> 🎓 FIAP - Cursando Engenharia de Software </p>
-<p> 🧒 Tenho 23 anos </p>
-<p> 📫 Me chamo Mikhael Groschitz </p>
+<p> 📫 My name is Mikhael Groschitz </p>
+<p> 👨‍💻 I currently work as a technical support analyst </p>
+<p> 🌱 I'm learning Python, Django, Azure, MySQL and derivatives </p>
+<p> 🎓 FIAP - Studying software engineering </p>
+<p> 🧒 I am 23 years old </p>
 
 ## Mikhael Groschitz' GitHub Stats
 
