@@ -36,6 +36,6 @@ Estou aprimorando minhas competências em arquitetura e segurança na Pós-Gradu
 
 <div align="center">
   
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Mikhael-Groschitz&show_icons=true&theme=radical&hide_border=true)
+<!--![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Mikhael-Groschitz&show_icons=true&theme=radical&hide_border=true)-->
 
 </div>
