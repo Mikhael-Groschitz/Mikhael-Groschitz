@@ -28,7 +28,7 @@ Estou aprimorando minhas competências em arquitetura e segurança na Pós-Gradu
 <div align="center">
 
 ### 📫 Contato
-**[LinkedIn](https://www.linkedin.com/in/mikhael-groschitz/)** | **[Email](mikhael907@yahoo.com)**
+**[LinkedIn](https://www.linkedin.com/in/mikhael-groschitz/)** | **[Email](mgroschitz@gmail.com)**
 
 </div>
 
