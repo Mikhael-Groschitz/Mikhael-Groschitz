@@ -7,9 +7,9 @@
 
 <div align="center">
 
-Sou um profissional focado na intersecção entre **Engenharia de Software Back-End** e **Análise de Dados**. Minha especialidade é construir pipelines, automatizar processos e desenvolver APIs robustas que transformam dados brutos em informações acionáveis e otimizadas para o negócio.
+Sou um profissional focado na intersecção entre **Engenharia de Software Back-End** e **Análise de Dados**. Minha Paixão é construir pipelines, automatizar processos e desenvolver APIs robustas que transformam dados brutos em informações acionáveis e otimizadas para o negócio.
 
-Atualmente, atuando como **Analista de Dados Júnior**, aplico meus conhecimentos de desenvolvimento para otimizar todo o ciclo de vida dos dados. Utilizo fortemente **Python** e **SQL** para extração, processamento, integrações de sistemas e modelagem de dados. Também possuo forte base em **Java com Spring Boot** para a criação de microsserviços.
+Atualmente, atuando como **Analista de Dados Júnior**, aplico meus conhecimentos de desenvolvimento para otimizar todo o ciclo de vida dos dados. Utilizo  **Python** e **SQL** para extração, processamento, integrações de sistemas e modelagem de dados. Também possuo uma base em **Java com Spring Boot** para a criação de microsserviços.
 
 Busco constantemente alinhar engenharia e infraestrutura, aprimorando minhas competências através da Pós-Graduação em **Arquitetura de Software, Ciência de Dados & Cybersecurity** (PUCPR).
 
