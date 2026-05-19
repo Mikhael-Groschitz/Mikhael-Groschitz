@@ -21,7 +21,7 @@ Busco constantemente alinhar engenharia e infraestrutura, aprimorando minhas com
 
 | Back-End & Automação | Bancos de Dados | Cloud & Ferramentas | Front-End (Ocasional) |
 | :---: | :---: | :---: | :---: |
-| <img src="https://skillicons.dev/icons?i=python,java,spring" /> | <img src="https://skillicons.dev/icons?i=mysql,postgres,sqlite" /> | <img src="https://skillicons.dev/icons?i=azure,docker,git" /> | <img src="https://skillicons.dev/icons?i=react,js,html,css" /> |
+| <img src="https://skillicons.dev/icons?i=python,java,spring" /> |  <img src="https://go-skill-icons.vercel.app/api/icons?i=sqlserver,mysql,postgres" /> | <img src="https://skillicons.dev/icons?i=azure,docker,git" /> | <img src="https://skillicons.dev/icons?i=react,js,html,css" /> |
 
 </div>
 
