@@ -27,36 +27,58 @@ Atuo com engenharia de dados em SQL Server e Azure: modelagem, pipelines ETL/ELT
 ## Projetos
 
 <table>
-<tr><td>
+<tr>
+<td width="50%" valign="top">
 <h3>Pipeline ELT de Preços de Combustíveis da ANP em Azure</h3>
-<p>Série histórica pública da ANP — 20 anos de coleta semanal de preços por posto revendedor, 219 arquivos CSV/ZIP — ingerida, padronizada e modelada em um Data Warehouse dimensional na nuvem.</p>
+<p>20 anos de coleta semanal de preços por posto revendedor — 219 arquivos CSV/ZIP da série histórica pública da ANP, ingeridos, padronizados e modelados em um Data Warehouse dimensional na nuvem.</p>
 <ul>
-<li><b>Escala:</b> 35,3M linhas de estágio → <b>32,2M linhas na fato</b>, carga histórica completa em pouco mais de 3h.</li>
-<li><b>Performance:</b> otimizações medidas em plano de execução — inlining de UDF escalar, índice clusterizado, conversão implícita que invalidava seek e SCD2 set-based no lugar de cursor. Projeção inicial de ~15h para <b>3h reais</b>.</li>
-<li><b>Arquitetura:</b> orquestração metadata-driven no Azure Data Factory (4 pipelines, sem Mapping Data Flows), toda transformação em stored procedures T-SQL dentro do compute que o banco já paga.</li>
-<li><b>Qualidade e segurança:</b> modelo estrela com SCD Tipo 2, 8 checagens de qualidade com severidade gravadas em log, autenticação 100% Azure AD — não existe login nem senha SQL em nenhum ponto do projeto.</li>
+<li><b>Escala:</b> 35,3M linhas de estágio → <b>32,2M na fato</b>, carga histórica completa em pouco mais de 3h.</li>
+<li><b>Performance:</b> inlining de UDF escalar, índice clusterizado, conversão implícita que invalidava seek e SCD2 set-based no lugar de cursor — de ~15h projetadas para <b>3h reais</b>.</li>
+<li><b>Arquitetura:</b> orquestração metadata-driven no Azure Data Factory (4 pipelines, sem Mapping Data Flows), toda transformação em stored procedures T-SQL.</li>
+<li><b>Qualidade:</b> modelo estrela com SCD Tipo 2, 8 checagens com severidade gravadas em log e autenticação 100% Azure AD — não existe login nem senha SQL no projeto.</li>
 </ul>
 <p><a href="https://github.com/Mikhael-Groschitz/anp-fuel-prices-elt-azure"><img src="https://img.shields.io/badge/Ver_reposit%C3%B3rio-181717?style=flat-square&logo=github&logoColor=white" /></a></p>
 <p><img src="https://img.shields.io/badge/Azure_Data_Factory-0078D4?style=flat-square&logo=microsoftazure&logoColor=white" /> <img src="https://img.shields.io/badge/ADLS_Gen2-0078D4?style=flat-square&logo=microsoftazure&logoColor=white" /> <img src="https://img.shields.io/badge/Azure_SQL-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" /> <img src="https://img.shields.io/badge/T--SQL-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" /> <img src="https://img.shields.io/badge/Bicep-0078D4?style=flat-square&logo=microsoftazure&logoColor=white" /> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black" /></p>
-</td></tr>
-<tr><td>
+</td>
+<td width="50%" valign="top">
 <h3>CDC no SQL Server → Data Warehouse Dimensional</h3>
 <p>Um OLTP sintético é alterado continuamente, o <b>Change Data Capture nativo do SQL Server</b> captura as mudanças e um pipeline em Python/T-SQL as transforma incrementalmente em um Data Warehouse dimensional.</p>
 <ul>
 <li>Extração incremental por <b>janela de LSN</b>, com watermark avançado na mesma transação do insert — sem estado "capturei mas não marquei".</li>
 <li><b>SCD Tipo 2</b> em dimensões com índice único filtrado garantindo uma única versão vigente por chave de negócio.</li>
 <li>Exclusão lógica na fato em vez de <code>DELETE</code> físico, preservando auditoria de cancelamentos.</li>
-<li>5 checagens de qualidade, CLI de orquestração (<code>run</code> / <code>status</code> / <code>reset</code>), testes em pytest e mapeamento documentado do pipeline inteiro para Azure Data Factory.</li>
+<li>5 checagens de qualidade, CLI de orquestração (<code>run</code> / <code>status</code> / <code>reset</code>), testes em pytest e mapeamento documentado do pipeline para Azure Data Factory.</li>
 </ul>
 <p><a href="https://github.com/Mikhael-Groschitz/sqlserver-cdc-to-dw"><img src="https://img.shields.io/badge/Ver_reposit%C3%B3rio-181717?style=flat-square&logo=github&logoColor=white" /></a></p>
 <p><img src="https://img.shields.io/badge/SQL_Server_2022-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" /> <img src="https://img.shields.io/badge/CDC-008080?style=flat-square" /> <img src="https://img.shields.io/badge/T--SQL-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" /> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" /> <img src="https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white" /></p>
-</td></tr>
-<tr><td>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
 <h3>Lakehouse sobre a base pública de CNPJ da Receita Federal</h3>
-<p>Processamento distribuído e orquestração sobre os dados da Receita Federal: Airflow e PySpark em Docker, camadas bronze/silver/gold em MinIO, Parquet particionado e checagens de qualidade.</p>
+<p>Processamento distribuído e orquestração sobre os dados da Receita Federal: <b>Airflow</b> disparando jobs <b>PySpark</b> em camadas bronze/silver/gold em Delta Lake sobre MinIO, consultadas com DuckDB — tudo em Docker, sem depender de nuvem paga.</p>
+<ul>
+<li><b>Escala:</b> ~30M linhas de estabelecimentos por competência; pipeline completa de bronze a gold em <b>2h40</b> num worker de 2 cores.</li>
+<li><b>Performance:</b> <code>repartition</code> por UF antes da escrita derrubou a saída de <b>5.631 para 103 arquivos</b>; validação do dígito verificador do CNPJ com expressões de coluna em vez de UDF; domínios sempre por broadcast join.</li>
+<li><b>Arquitetura:</b> DAG única encadeando ingestão idempotente (manifesto com hash), 5 jobs silver, gate de qualidade e 4 tabelas gold via <code>SparkSubmitOperator</code>.</li>
+<li><b>Qualidade:</b> o gate falha o job e bloqueia o gold em vez de só logar — <b>99,99999%</b> dos CNPJs reconstruídos passam na validação, com 30 testes em pytest.</li>
+</ul>
 <p><a href="https://github.com/Mikhael-Groschitz/cnpj-lakehouse-spark-airflow"><img src="https://img.shields.io/badge/Ver_reposit%C3%B3rio-181717?style=flat-square&logo=github&logoColor=white" /></a></p>
-<p><img src="https://img.shields.io/badge/Em_constru%C3%A7%C3%A3o-6E7681?style=flat-square" /> <img src="https://img.shields.io/badge/Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white" /> <img src="https://img.shields.io/badge/PySpark-E25A1C?style=flat-square&logo=apachespark&logoColor=white" /> <img src="https://img.shields.io/badge/MinIO-C72E49?style=flat-square&logo=minio&logoColor=white" /></p>
-</td></tr>
+<p><img src="https://img.shields.io/badge/Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white" /> <img src="https://img.shields.io/badge/PySpark-E25A1C?style=flat-square&logo=apachespark&logoColor=white" /> <img src="https://img.shields.io/badge/Delta_Lake-00ADD4?style=flat-square" /> <img src="https://img.shields.io/badge/MinIO-C72E49?style=flat-square&logo=minio&logoColor=white" /> <img src="https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=black" /> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" /> <img src="https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white" /></p>
+</td>
+<td width="50%" valign="top">
+<h3>Streaming de propostas de crédito com MongoDB, Kafka e Spark</h3>
+<p>Mudanças de estado de propostas de consignado, cartão e FGTS gravadas no MongoDB são capturadas por <b>change streams</b>, propagadas para o <b>Kafka</b> e materializadas em camadas bronze/silver/gold sobre Delta Lake com <b>Spark Structured Streaming</b> — tudo em Docker, sem nenhum serviço de nuvem pago.</p>
+<ul>
+<li><b>Entrega:</b> o resume token só avança depois que o Kafka confirma o lote inteiro, e a deduplicação acontece no merge do Delta — na pior hipótese um lote é reprocessado, nunca se perde evento.</li>
+<li><b>Ordenação:</b> <code>id_proposta</code> como chave da mensagem, garantindo que todas as mudanças de uma mesma proposta caiam na mesma partição.</li>
+<li><b>Camada analítica:</b> histórico completo de mudanças e estado atual por merge incremental, com watermark e política explícita de dado atrasado, tratando a heterogeneidade de schema entre os três produtos.</li>
+<li><b>Resiliência provada rodando:</b> queda do Kafka, queda do Mongo, reinício do conector e resume token inválido — que para o serviço com erro claro em vez de pular eventos em silêncio.</li>
+</ul>
+<p><a href="https://github.com/Mikhael-Groschitz/credit-proposals-streaming-mongodb-kafka"><img src="https://img.shields.io/badge/Ver_reposit%C3%B3rio-181717?style=flat-square&logo=github&logoColor=white" /></a></p>
+<p><img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" /> <img src="https://img.shields.io/badge/Apache_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" /> <img src="https://img.shields.io/badge/Spark_Streaming-E25A1C?style=flat-square&logo=apachespark&logoColor=white" /> <img src="https://img.shields.io/badge/Delta_Lake-00ADD4?style=flat-square" /> <img src="https://img.shields.io/badge/MinIO-C72E49?style=flat-square&logo=minio&logoColor=white" /> <img src="https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=black" /> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" /></p>
+</td>
+</tr>
 </table>
 
 ---
