@@ -31,9 +31,8 @@ Hoje sou responsável pela estrutura de dados de um **CRM jurídico em produçã
 Antes disso, trabalhei com dados financeiros e contábeis, processando grandes volumes com SQL e Python, construindo dashboards no Power BI e desenvolvendo análises de anomalias, fluxo de caixa e rentabilidade.
 
 <p align="left">
-  <img src="assets/console-focus-list.svg" alt="mikhael@data-engineering:~$ ./focus --list" />
+  <img src="assets/console-focus-list.svg" width="480" alt="mikhael@data-engineering:~$ ./focus --list" />
 </p>
----
 
 ---
 
