@@ -1,10 +1,10 @@
 # `mikhael@groschitz:~$ whoami`
 
-```text
+<pre>
 Mikhael Groschitz
 Engenheiro de Dados
 SQL Server · Azure · Python · Spark
-```
+</pre>
 <p align="left">
   <a href="https://www.linkedin.com/in/mikhael-groschitz/"><img src="https://img.shields.io/badge/LinkedIn-111820?style=for-the-badge&logo=linkedin&logoColor=39D353" alt="LinkedIn" /></a>
   <a href="https://mgroschitz.dev"><img src="https://img.shields.io/badge/Portf%C3%B3lio-111820?style=for-the-badge&logo=vercel&logoColor=39D353" alt="Portfólio" /></a>
@@ -30,17 +30,9 @@ Hoje sou responsável pela estrutura de dados de um **CRM jurídico em produçã
 
 Antes disso, trabalhei com dados financeiros e contábeis, processando grandes volumes com SQL e Python, construindo dashboards no Power BI e desenvolvendo análises de anomalias, fluxo de caixa e rentabilidade.
 
-```console
-mikhael@data-engineering:~$ ./focus --list
-
-[01] ingestão incremental
-[02] modelagem dimensional
-[03] orquestração e observabilidade
-[04] qualidade de dados
-[05] performance e custo em cloud
-
-status: 5 áreas carregadas com sucesso
-```
+<p align="left">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjQ2IiBmb250LWZhbWlseT0iU0ZNb25vLVJlZ3VsYXIsIENvbnNvbGFzLCAnTGliZXJhdGlvbiBNb25vJywgTWVubG8sIG1vbm9zcGFjZSIgZm9udC1zaXplPSIxNCI+CiAgPHJlY3Qgd2lkdGg9IjQ4MCIgaGVpZ2h0PSIyNDYiIHJ4PSI4IiBmaWxsPSIjMTExODIwIi8+CiAgPHRleHQgeD0iMjAiIHk9IjM0IiBmaWxsPSIjZTZlZGYzIiB4bWw6c3BhY2U9InByZXNlcnZlIj5taWtoYWVsQGRhdGEtZW5naW5lZXJpbmc6fiQgLi9mb2N1cyAtLWxpc3Q8L3RleHQ+CiAgPHRleHQgeD0iMjAiIHk9Ijc4IiBmaWxsPSIjNzljMGZmIiB4bWw6c3BhY2U9InByZXNlcnZlIj5bMDFdIGluZ2VzdMOjbyBpbmNyZW1lbnRhbDwvdGV4dD4KICA8dGV4dCB4PSIyMCIgeT0iMTAwIiBmaWxsPSIjNzljMGZmIiB4bWw6c3BhY2U9InByZXNlcnZlIj5bMDJdIG1vZGVsYWdlbSBkaW1lbnNpb25hbDwvdGV4dD4KICA8dGV4dCB4PSIyMCIgeT0iMTIyIiBmaWxsPSIjNzljMGZmIiB4bWw6c3BhY2U9InByZXNlcnZlIj5bMDNdIG9ycXVlc3RyYcOnw6NvIGUgb2JzZXJ2YWJpbGlkYWRlPC90ZXh0PgogIDx0ZXh0IHg9IjIwIiB5PSIxNDQiIGZpbGw9IiM3OWMwZmYiIHhtbDpzcGFjZT0icHJlc2VydmUiPlswNF0gcXVhbGlkYWRlIGRlIGRhZG9zPC90ZXh0PgogIDx0ZXh0IHg9IjIwIiB5PSIxNjYiIGZpbGw9IiM3OWMwZmYiIHhtbDpzcGFjZT0icHJlc2VydmUiPlswNV0gcGVyZm9ybWFuY2UgZSBjdXN0byBlbSBjbG91ZDwvdGV4dD4KICA8dGV4dCB4PSIyMCIgeT0iMjEwIiBmaWxsPSIjZTZlZGYzIiB4bWw6c3BhY2U9InByZXNlcnZlIj5zdGF0dXM6IDUgw6FyZWFzIGNhcnJlZ2FkYXMgY29tIHN1Y2Vzc288L3RleHQ+Cjwvc3ZnPgo=" alt="mikhael@data-engineering:~$ ./focus --list" />
+</p>
 
 ---
 
@@ -167,20 +159,20 @@ status: 5 áreas carregadas com sucesso
 
 ## `cat formacao.txt`
 
-```text
+<pre>
 2025—2026  Pós-graduação em Arquitetura de Software,
            Ciência de Dados e Cybersecurity · PUCPR
 
 2023—2025  Tecnólogo em Análise e Desenvolvimento de Sistemas
            Anhanguera
-```
+</pre>
 
 ---
 
 ## `echo $STATUS`
 
-```diff
+<pre>
 + aberto a conversas sobre oportunidades em Engenharia de Dados
-```
+</pre>
 
 <sub>Se algum dos problemas acima também aparece no seu ambiente, vamos conversar.</sub>
